@@ -6,11 +6,11 @@ from scipy.io import loadmat
 import numpy as np
 from time import sleep
 
-startx= int(input("choose X coordinates for the robot: ")) #coordinates of the robot
-starty= int(input("choose Y coordinates for the robot: "))
-targetx= int(input("choose your targets X coordinates: ")) #coordinates of the target
-targety= int(input("choose your targets Y coordinates: "))
-obstaclenum= int(input("choose number of obstacles in the map: ")) #number of obstacles randomly generated 
+startx= float(input("choose X coordinates for the robot: ")) #coordinates of the robot
+starty= float(input("choose Y coordinates for the robot: "))
+targetx= float(input("choose your targets X coordinates: ")) #coordinates of the target
+targety= float(input("choose your targets Y coordinates: "))
+obstaclenum= float(input("choose number of obstacles in the map: ")) #number of obstacles randomly generated 
 
 start=[startx,starty] #making a list of the coordinates of the robot
 target=[targetx, targety] #making a list of the coordinates of the target
