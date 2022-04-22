@@ -1,9 +1,9 @@
 # Documentation
 
-Required version of python: 3.6-3.8.9
-Required to download library for roboticstoolbox
-Required to download python extensions: pip3
-Required to change the file name of the .png file of users robot image
+-Required version of python: 3.6-3.8.9
+-Required to download library for roboticstoolbox
+-Required to download python extensions: pip3
+-Required to change the file name of the .png file of users robot image
 The code is designed to take in inputs from the user for the robots starting position and the desired targets position. (X and Y coordinates) 
 The user is also given the option to add the desired amount of obstacles on a set map size of 20mx20m, these obstacles are randomly placed.
 The main outputs:
