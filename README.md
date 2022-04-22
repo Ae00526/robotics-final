@@ -1,5 +1,5 @@
-# robotics-final
-Documentation
+# Documentation
+
 Required version of python: 3.6-3.8.9
 Required to download library for roboticstoolbox
 Required to download python extensions: pip3
