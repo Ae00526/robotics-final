@@ -1,5 +1,4 @@
 
-
 from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor, LandmarkMap
 from math import pi, atan2, sqrt
 import matplotlib.pyplot as plt
@@ -19,6 +18,8 @@ delay=str(input("Do you want a delay in the data displayed? \'yes' or \'no': "))
 targdislower=targdis.lower() #no matter how 'yes' is written it'll always activate the condition
 obstdislower=obstdis.lower() #no matter how 'yes' is written it'll always activate the condition
 delaylower=delay.lower() #no matter how 'yes' is written it'll always activate the condition
+if targdislower!='yes' and obstdislower!='yes':
+    delaylower="no" #if no data is displayed then a delay would not be applied, so that it doesnt affect the robot
 
 start=[startx,starty] #making a list of the coordinates of the robot
 target=[targetx, targety] #making a list of the coordinates of the target
