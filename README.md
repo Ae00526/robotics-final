@@ -34,6 +34,8 @@ The main outputs:
   
   Angle of robot to all randomly placed obstacles in radians
   
+  Message that confirms the robot has reached the target
+  
   The map, which is 20mx20m and the robot moving towards the target
   
 Advanced algorithm for manouvering past obstacles was used, depending on the angle from the robot to the obstacle, acts as a way of figuring out if the obstacle is ahead or behind the robot, the robot would chose the most efficient way to avoid the obstacle, turning 60 degrees to the left or 45 degrees to the right. These degrees have been calculated after numerous tests and gave the best and smoothest movement.
