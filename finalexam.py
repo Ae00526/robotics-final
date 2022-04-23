@@ -1,4 +1,5 @@
 
+
 from roboticstoolbox import Bicycle, RandomPath, VehicleIcon, RangeBearingSensor, LandmarkMap
 from math import pi, atan2, sqrt
 import matplotlib.pyplot as plt
@@ -12,8 +13,8 @@ starty= float(input("Choose Y coordinates for the robot: "))
 targetx= float(input("Choose your targets X coordinates: ")) #coordinates of the target
 targety= float(input("Choose your targets Y coordinates: "))
 obstaclenum= int(input("Choose number of obstacles in the map: ")) #number of obstacles randomly generated 
-targdis=str(input("Do you want to see the distance and angle to the target? \'yes' or \'no': ")) #user choice to display constant change in angle and distance to set target
-obstdis=str(input("Do you want to see the distance and angle to each obstacle? \'yes' or \'no': ")) #user choice to see distance and angle to each obstacle, incase theres alot
+targdis=str(input("Do you want to see the changes in distance and angle to the target? \'yes' or \'no': ")) #user choice to display constant change in angle and distance to set target
+obstdis=str(input("Do you want to see the changes in distance and angle to each obstacle? \'yes' or \'no': ")) #user choice to see distance and angle to each obstacle, incase theres alot
 delay=str(input("Do you want a delay in the data displayed? \'yes' or \'no': ")) #user choice for a delay in data output and movement of robot
 targdislower=targdis.lower() #no matter how 'yes' is written it'll always activate the condition
 obstdislower=obstdis.lower() #no matter how 'yes' is written it'll always activate the condition
@@ -29,15 +30,20 @@ veh=Bicycle(
     x0= (startx, starty, 0), #coordinates of the robot and centered at 0
 )
 veh.init(plot=True)
+
+goal_heading=atan2(
+    target[1]-veh.x[1], #calculating distance to target using TAN and the distance
+    target[0]-veh.x[0]
+    )
+steer=goal_heading-veh.x[2]
+
 mymap=LandmarkMap(obstaclenum,20) #display the map of obstacles on a grid of dimension of 20x20 to fit
 mymap.plot()
 sensor=RangeBearingSensor(robot=veh,map=mymap,animate=True) #sensor for distance of robot to random obstacles
-print((targetx-startx),",", targety-starty) #starting distance
+print("Initial distance to target: ",(abs(sqrt((targetx-veh.x[0])**2+(targety-veh.x[1])**2))), "Metres,", " Initial angle to target: ", (steer*180)/pi, "Degrees") #starting distance and angle
 # print(sensor.h(veh.x))
 veh._animation.update(veh.x) #update animation of robot
 plt.plot()
-
-
 
 
 target_marker_style={ #dictionary for the design of the target
@@ -46,9 +52,7 @@ target_marker_style={ #dictionary for the design of the target
     'color': 'b'
 }
 plt.plot(targetx, targety, **target_marker_style)
-
 plt.plot()
-
 run = True #move robot towards target
 
 # def avoidance(rsensors):
@@ -75,8 +79,8 @@ while (run):
     
     veh.step(3,steer) #speed of the robot moving and the angle to target
     if targdislower=='yes':
-        print("Distance to target: ",(abs(sqrt((targetx-veh.x[0])**2+(targety-veh.x[1])**2))), "metres", end="...") #distance to target using pythagorean theorem
-        print("Angle to target: ",(steer*180)/pi, "degrees") #changing the angle from radian to degrees
+        print("Distance to target: ",(abs(sqrt((targetx-veh.x[0])**2+(targety-veh.x[1])**2))), "Metres", end="...") #distance to target using pythagorean theorem
+        print("Angle to target: ",(steer*180)/pi, "Degrees") #changing the angle from radian to degrees
         
     sens=sensor.h(veh.x)
     if obstdislower=='yes': 
