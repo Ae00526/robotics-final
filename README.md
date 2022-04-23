@@ -12,6 +12,18 @@ The code is designed to take in inputs from the user for the robots starting pos
 The user is also given the option to add the desired amount of obstacles on a set map size of 20mx20m, these obstacles are randomly placed.
 Recently added options for the user to decide whether a delay should be present and whether they want to display data of the distance and angle to the target and obstacles.
 
+The main inputs:
+
+  Robots initial X and Y position
+  
+  Targets set X and Y coordinates
+  
+  Number of randomly placed obstacles
+  
+  User choice to see new computed distance and angle to the target and to the obstacles
+  
+  User choice to have a delay for the data or not
+
 The main outputs:
 
   Distance of robot to target in metres
