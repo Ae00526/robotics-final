@@ -6,7 +6,7 @@ Required to download library for roboticstoolbox
 
 Required to download python extensions: pip3, sympy, matplotlib, scipy.io, math, numpy
 
-Required to change the file name of the .png file to users robot image file name
+Required to change the file name of the .png file to users robot image file name and have both the image and code file in the same directory, ex: Desktop
 
 The code is designed to take in inputs from the user for the robots starting position and the desired targets position. (X and Y coordinates) 
 The user is also given the option to add the desired amount of obstacles on a set map size of 20mx20m, these obstacles are randomly placed.
