@@ -26,9 +26,9 @@ The main inputs:
 
 The main outputs:
 
-  Distance of robot to target in metres
+  Distance of robot to target is in metres
   
-  Angle of robot to target in degrees
+  Angle of robot to target is in degrees
   
   Distance of robot to all randomly placed obstacles in metres 
   
